@@ -1,0 +1,4 @@
+lattice, number_of_nodes
+cube_100by100by100, 1mil
+octahedron_159by159by159.lat, 1005039, my prediction was 3/4 * sidelength off
+tetrahedron_200by200by200.lat, 1000000

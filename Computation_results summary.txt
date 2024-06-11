@@ -1,0 +1,46 @@
+a neuron_collection_data_AAAlattice_runBBB_XXXbyYYYbyZZZ_CCCn.csv
+---------------------------------------------------------------------------------------------------------------
+is a csv of the coordinates of each lattice point occupied by each neuron object from a intersect_branch_to_optomise_wk8.py simulation
+
+AAA - describes the lattice shape
+BBB - describes the run number (each csv will only contain the results for one neuron branching simulation)
+XXX - max x ordinate of the lattice
+YYY - max z ordinate of the lattice
+ZZZ - max z ordinate of the lattice
+CCC - the number of neurons placed on the lattice at t=0
+
+The output contains:
+neuron_name(arbitrary number), -self explanatory, counts the neurons in the simulation
+x, -the position of the point described by this row belonging to neuron_name of the same row
+y,
+z,
+parent_x, - the position of the neuron at time_added_to_neuron-1 which grew into this rows point(x,y,z)(for root this is the same as x)
+parent_y,
+parent_z,
+time_added_to_neuron, -the time step of the simulation at which the point belonging to the neuron_name was added 
+is_root, -a boolean indicator
+is_childless, -a boolean indicator if this point belonging to neuron_name has no children
+is_branch, -a boolean indicator describing if this point belonging to neuron_name is the parent of more than one point(the neuron grew twice at the same timestep from this point)
+is_intersection, -a boolean indicator describing if this point is shared by other neuron_name s
+---------------------------------------------------------------------------------------------------------------
+
+(alt_)lengths_(branched/terminated)_cables_DDDr_AAA_XXXbyYYYbyZZZ_CCCn.txt
+---------------------------------------------------------------------------------------------------------------
+a list of all the lengths of cables that will branch/terminate collated for a AAA_XXXbyYYYbyZZZ_CCCn simulation performed(independantly(starting positions of neurons and growing choices are different randoms between simulations)) DDD number of times
+
+follows the same naming convention as above except here instead of sepeating files by runs, all runs are combined and so
+DDD - describes the number of runs that the txt file (think of it more as a list) of cable lengths will collate, how many lattices had neuron growing simulations performed on them
+branched - only information for cables that will branch stored
+terminated - only information for cables that will terminate stored
+---------------------------------------------------------------------------------------------------------------
+
+actual_number_of_runs.txt 
+---------------------------------------------------------------------------------------------------------------
+describes how many runs were actually performed and stored in an (alt_)lengths_(branched/terminated)_cables_DDDr_AAA_XXXbyYYYbyZZZ_CCCn.txt file as they are named 100r even if they are not yet at 100r
+---------------------------------------------------------------------------------------------------------------
+
+plot_length_vs_frequency.py
+---------------------------------------------------------------------------------------------------------------
+plots length vs frequency for cable lengths from (alt_)lengths_(branched/terminated)_cables_DDDr_AAA_XXXbyYYYbyZZZ_CCCn.txt 
+---------------------------------------------------------------------------------------------------------------
+
